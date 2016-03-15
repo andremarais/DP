@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "test <- beer[, c('YeastTempMin', 'YeastTempMax', 'FermentationTemperature')]\n\nggplot(test) + geom_point(aes(x = YeastTempMin, y = YeastTempMax))\nggplot(test) + geom_point(aes(x = YeastTempMin, y = YeastTempMax, col = FermentationTemperature))\nlm(test, FermentationTemperature ~. )\nlm(data = test, FermentationTemperature ~. )\na <- lm(data = test, FermentationTemperature ~. )\nstr(a)\nsummary(a)\ntest\ntest[!is.na(test$FermentationTemperature),]\na <- lm(data = test[!is.na(test$FermentationTemperature),], FermentationTemperature ~. )\nsummary(a)\na <- randomForest(data = test[!is.na(test$FermentationTemperature),], FermentationTemperature ~. )\na\na$predicted\ntest$YeastTempMean <- (test$YeastTempMin + test$YeastTempMax)/2\na <- randomForest(data = test[!is.na(test$FermentationTemperature),], FermentationTemperature ~. )\na <- lm(data = test[!is.na(test$FermentationTemperature),], FermentationTemperature ~. )\nsummary(a)\ncorrplot(cor(test[!is.na(test$FermentationTemperature),]))\ncolnames(beer2)\nbeer2$Style\n",
+    "created" : 1458029787642.000,
+    "dirty" : true,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "4074268735",
+    "id" : "6F2E4FCD",
+    "lastKnownWriteTime" : 3419473789575321445,
+    "last_content_update" : 1458029825020,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
